@@ -1,0 +1,320 @@
+win + R => cmd
+
+python
+py
+
+python3
+
+1.py
+print("Hello Python")
+
+quit()
+
+python 1.py
+py 1.py
+1.py
+
+main.py
+
+Ctrl + D - создать дубликат
+
+Ctrl + / - комментарий
+
+Типы данных
+	- неизменяемые
+		int - целое число
+		float - вещественное число
+		str - строковое значение
+		bool - булево значение (True/False)
+		tuple - кортеж
+		frozenset - замороженное множество
+	- изменяемые
+		list - список
+		set - множество
+		dict - словарь
+
+import keyword
+print(keyword.kwlist)
+
+False: "", 0, 0.0, False, None
+
+Цикл - конструкция повторения
+
+Итерация - один шаг цикла
+
+while (неопределенное значение итераций)
+
+while условие:
+	блок кода
+	
+- list	
+'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+
+- tuple
+'count', 'index'
+
+- dict
+ 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
+ 
+- str
+'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'
+ 
+Ё - 1025 
+А - 1040
+...
+Я - 1071
+а - 1072
+...
+я - 1103
+ё - 1105
+
+
+r - чтения (файл должен быть создан)
+w - записи (файла может не быть)
+a - дозаписи (файла может не быть)
+
+1. marshal
+
+2. pickle
+3. json
+
+Сериализация и десериализация
+
+dump() - сохраняет данные в отрытый файл
+load() - считывает данные из отрытого файла
+
+dumps() - сохраняет данные в строку
+loads() - считывает данные из строки
+
+pip install requests
+
+CSV (Comma Separated Values)
+
+data.csv
+
+Имя,Профессия,Год рождения
+Виктор,Веб-дизайнер,1995
+Игорь,Программист,1983
+
+Имя;Профессия;Год рождения
+Виктор;Веб-дизайнер;1995
+Игорь;Программист;1983
+
+reader()  # чтение данных []
+DictReader()  # чтение данных {}
+
+writer()  # запись данных []
+DictWriter()  # запись данных {}
+
+
+*.db, *.sqlite 
+
+SELECT [ALL | DISTINCT] {* | столбец1 [, столбец_n]}
+FROM таблица1 [, таблица_n]
+[WHERE условие] 
+	операторы сравнения (=, <>, !=, >, >=, <, <=)
+	AND | OR
+	[NOT] BETWEEN начальное_значение AND конечное_значение
+	[NOT] LIKE шаблон_строки:
+		% - любые символы в любом количестве
+		_ - один любой символ
+	[NOT] GLOB регулярное_выражение:
+		* - любые символы в любом количестве
+		? - один любой символ
+		. - один любой символ
+		[символы] - один из перечисленных символов [апу]
+		[начальный_символа-конечный_символ] - один из символов диапазона [А-Яа-я0-9]
+		[^...] - символ, не входящий в перечень значений [^0-9] 
+	IS [NOT] NULL
+	[NOT] IN (набор_значений | выражение)
+	EXISTS (проверка существования)
+[GROUP BY (группировать по) поле]
+[HAVING (условие)]
+[ORDER BY col_name | col_number [ASC | DESC]]
+[LIMIT [смещение,] количество_строк]
+	LIMIT количество_строк OFFSET смещение
+	
+	
+INSERT
+UPDATE
+DELETE
+
+
+INSERT INTO имя_таблицы [(столбец1 [, столбец_n])]
+VALUES (зачение1 [, значение_n])
+
+
+INSERT INTO имя_таблицы [(столбец1 [, столбец_n])]
+SELECT столбец1 [, столбец_n]
+FROM таблица1 [, таблица_n]
+[WHERE увловие]
+
+
+UPDATE имя_таблицы
+SET столбец1=значение [, столбец_n=значение]
+[WHERE увловие]
+
+
+DELETE FROM имя_таблицы
+[WHERE увловие]
+
+1) разработчик логической базы данных
+2) разработчик физической базы данных
+
+Декартовое произведение (т.е. все возможные комбинации каждой строки одной таблицы с каждой строкой другой таблицы)
+
+
+Функции агрегирования
+
+SUM() - сумма  (только для чисел)
+AVG() - среднее арифметическое  (только для чисел)
+COUNT() - количество записей
+MIN() - минимальное значение
+MAX() - максимальное значение
+
+ON DELETE (ON UPDATE)
+ - CASCADE - автоматически удаляет или изменяет строки из зависимой таблицы при удалении или изменении связанных строк в главной таблице
+ - SET NULL - при удалении связанной строки из главной таблицы устанавливает для столбца внешнего ключа значение NULL
+ - RESTRICT - отклоняет удаление строк в главной таблице при наличии связанных строк в зависимой таблице.
+ - SET DEFAULT - при удалении связанной строки из главной таблицы устанавливает для столбца внешнего ключа значение по умолчанию, которое задается с помощью атрибута DEFAULT
+ 
+Подзапросы, внутренние или вложенные запросы
+запрос = (запрос)
+
+Подзапросы
+- однострочный подзапрос (=, <, >, >=, <=, <>)
+- многострочный подзапрос ([NOT] IN)
+
+UNION
+UNION ALL
+
+SELECT столбецы
+FROM таблица1 [INNER] JOIN таблица2 ON условие1
+		[[INNER] JOIN таблица3 ON условие2]
+		
+SELECT столбецы
+FROM таблица1 LEFT [RIGHT] JOIN таблица2 ON условие1
+		[LEFT [RIGHT] JOIN таблица3 ON условие2]
+		
+		
+Система контроля версий (Version Control Systems, VCS) — это система, сохраняющая изменения в одном или нескольких файлах так, чтобы потом можно было восстановить определённые старые версии.
+
+Git является распределенной (distributed) системой контроля версий.
+
+GitHub
+
+git --version
+git --help
+
+
+git init
+- создание git репозитория
+
+git status
+- просмотр состояния репозитория
+
+tracked - файлы под версионным контролем (отслеживаемые)
+untracked - файлы не под версионным контролем (не отслеживаемые)
+
+git add -A
+		--all
+		main.py
+		.
+- добавляет файлы под версионный контроль
+		
+
+git config --global user.name "newUser"
+		   --local
+	Для проверки:
+	git config --global user.name
+	
+git config --global user.email "test@mail.ru"
+	
+	Для проверки:
+	git config --global user.email
+	
+
+git commit -m "first commit"
+- создает коммит (контрольная точка) с названием
+
+
+.gitignore
+
+text_for_gitignore.txt
+
+
+Ветки
+git branch
+- просмотр веток
+
+git branch test
+- создать ветку
+
+git branch -D test
+- удаление ветки
+
+
+git branch readme
+
+
+git checkout readme
+- перейти на ветку
+
+git checkout -b new
+- при переходе на ветку, она создастся автоматически
+
+
+git branch -D new
+
+readme.md
+
+git commit -m "created file readme.md"
+
+
+master     ->      readme
+main.py            main.py
+readme.md   <-	   readme.md
+				   
+git merge readme
+- слияние веток
+
+git branch -D readme
+
+git log
+- история коммитов
+
+
+q
+
+Settings -> Developer Settings -> Personal access tokens ->
+Nokens (classic) -> Generate new token (classic)
+
+
+токен
+
+Win + R => control
+
+Диспечер учетных данных
+
+
+https://github.com
+Helen-prog
+токен
+
+
+https://github.com/Helen-prog/AD622.git
+git push -u origin master
+
+
+810da858a1ce1adfef6c32596662ed821e7ba
+
+
+0) git status
+1) git add .
+2) git commit -m "change"
+3) git push
+	- переносим данные с локального репозитория на удаленный репозиторий
+	
+https://github.com/Helen-prog/AD622/blob/master/main.py
+
+

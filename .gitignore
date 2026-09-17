@@ -1,0 +1,5 @@
+text_for_gitignore.txt
+/folder
+.venv/
+.idea/
+.DS_Store

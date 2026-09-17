@@ -1,0 +1,13 @@
+{
+    "name": "Olga",
+    "age": 20,
+    "20": null,
+    "true": true,
+    "null": false,
+    "list": [
+        5,
+        8,
+        9,
+        7
+    ]
+}

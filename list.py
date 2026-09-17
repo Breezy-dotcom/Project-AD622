@@ -1,0 +1,12 @@
+list=[1,2,3,4,5,6,7]
+print(list) #[1,2,3,4,5,6,7]
+print(list[::-1]) #[7,6,5,4,3,2,1]
+print(list[::2]) #[1,3,5,7]
+print(list[1::2]) #[2,4,6]
+print(list[:1]) #[1]
+print(list[-1:]) #[7]
+print(list[3:4]) #[4]
+print(list[4:]) #[5,6,7]
+print(list[4:1:-1]) #[5,4,3]
+print(list[2:5]) #[3,4,5]
+
